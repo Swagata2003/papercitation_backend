@@ -18,9 +18,9 @@ def getyear(pid):
     return None
 
 json_data={}
-directory = '../cit-HepTh-abstracts'
+directory = './cit-HepTh-abstracts'
 
-inputfile='../cit-HepTh.txt/Cit-HepTh.txt'
+inputfile='./cit-HepTh.txt/Cit-HepTh.txt'
 all_pids = list_all_pids(directory)
 
 minyr=1992

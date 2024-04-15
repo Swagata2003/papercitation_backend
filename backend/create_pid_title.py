@@ -35,7 +35,7 @@ def process_directory(directory, output_file):
         json.dump(paper_data, json_file, indent=4)
 
 # Replace 'your_main_directory' and 'output.json' with your actual directory and desired output file name.
-main_directory = '../cit-HepTh-abstracts'
+main_directory = './cit-HepTh-abstracts'
 output_file = 'pid_title.json'
 
 process_directory(main_directory, output_file)

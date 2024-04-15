@@ -16,9 +16,9 @@ def score(pid_list, metrics_data):
             s += 1 / math.log(no, 10)
     return s
 
-directory = '../cit-HepTh-abstracts'  # Replace this with the actual directory path
+directory = './cit-HepTh-abstracts'  # Replace this with the actual directory path
 metricsfile = './metrics.json'
-linkfile = '../cit-HepTh.txt/Cit-HepTh.txt'
+linkfile = './cit-HepTh.txt/Cit-HepTh.txt'
 
 with open(metricsfile, 'r') as f:
     metrics_data = json.load(f)

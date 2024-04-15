@@ -2,7 +2,7 @@ import networkx as nx
 import json
 
 G = nx.DiGraph()
-inputfile = "../cit-HepTh.txt/Cit-HepTh.txt"
+inputfile = "./cit-HepTh.txt/Cit-HepTh.txt"
 
 with open(inputfile, "r") as file:
     for line in file:

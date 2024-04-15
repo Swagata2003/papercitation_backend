@@ -12,8 +12,8 @@ def list_all_pids(directory):
             pids.append(pid)
     return pids
 
-directory = '../cit-HepTh-abstracts'
-inputfile='../cit-HepTh.txt/Cit-HepTh.txt'
+directory = './cit-HepTh-abstracts'
+inputfile='./cit-HepTh.txt/Cit-HepTh.txt'
 all_pids = list_all_pids(directory)
 json_data={}
 

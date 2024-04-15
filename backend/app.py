@@ -82,7 +82,7 @@ def get_data_for_pid(pid):
     # Define the path to the directory containing the data files
     folder=getfolder(pid)
     
-    data_directory = f'../cit-HepTh-abstracts/{folder}'
+    data_directory = f'./cit-HepTh-abstracts/{folder}'
     # print(data_directory)
     # Construct the file path for the PID
     abs_file_path = os.path.join(data_directory, f'{pid}.abs')
@@ -133,7 +133,7 @@ def paper():
     level1cite = set()
     level2cite = set()
 
-    file_path = '../cit-HepTh.txt/Cit-HepTh.txt'
+    file_path = './cit-HepTh.txt/Cit-HepTh.txt'
     with open(file_path, 'r') as f:
         for line in f:
             pid1, pid2 = line.strip().split('\t')

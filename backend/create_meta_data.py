@@ -13,7 +13,7 @@ all_data = {}
 
 for year in range(minyr, maxyr + 1):
     # Construct the directory path for the current year
-    data_directory = f'../cit-HepTh-abstracts/{year}'
+    data_directory = f'./cit-HepTh-abstracts/{year}'
     
     # Check if the directory exists
     if os.path.exists(data_directory):

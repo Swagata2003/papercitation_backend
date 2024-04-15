@@ -7,9 +7,9 @@ def extract_pid(file_name):
 def list_all_pids(directory):
     return [extract_pid(file) for _, _, files in os.walk(directory) for file in files]
 
-directory = '../cit-HepTh-abstracts' 
+directory = './cit-HepTh-abstracts' 
 all_pids = list_all_pids(directory)
-linkfile = '../cit-HepTh.txt/Cit-HepTh.txt'
+linkfile = './cit-HepTh.txt/Cit-HepTh.txt'
 
 disruptionscore={}
 
