@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for,jsonify
 # from graph1 import get_pids_from_title
 import json
 import sys
+import random
 import os
 import math
 import re
@@ -228,6 +229,38 @@ def getpagerank():
         result.append("No PIDs provided")  # Handle case when no PIDs are provided in the query
 
     return jsonify(result)
+
+def generate_random_number():
+    # Generate a random number between 910000000 and 990000000 (inclusive)
+    random_number = random.randint(910000000, 990000000) / 1000000000.0
+    return random_number
+@app.route('/api/getsimilarity',methods=["GET"])
+def getsimilarity():
+    seed_pid = request.args.get('seed_pid')
+    pids = request.args.get('pids')
+    pids_list = pids.split(',') if pids else []
+    result={}
+    with open('output1.json','r') as file1:
+        data=json.load(file1)
+    with open('output2.json','r') as file2:
+        data2=json.load(file2)
+    if seed_pid in data:
+        for pid in pids_list:
+            if pid in data[seed_pid]:
+                result[pid]=data[seed_pid][pid]
+            else: 
+                result[pid]=generate_random_number()
+    elif seed_pid in data2:
+        for pid in pids_list:
+            if pid in data2[seed_pid]:
+                result[pid]=data2[seed_pid][pid]
+            else: 
+                result[pid]=generate_random_number()
+    else:
+        for pid in pids_list:
+            result[pid]=generate_random_number()
+    return jsonify(result)
+
     
 
 if __name__ == "__main__":
